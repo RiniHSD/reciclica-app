@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
+import { FormBuilder } from '@angular/forms';
+import {Router} from '@angular/router';
+import { RegisterPageForm } from './form/register.page.form';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -7,13 +10,20 @@ import {Router} from '@angular/router'
 })
 export class RegisterPage implements OnInit {
 
-  constructor(private router: Router) { }
+  registerForm: RegisterPageForm = new RegisterPageForm(this.formBuilder);
+
+  constructor(private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.createForm();
   }
 
   register(){
     this.router.navigate(['home']);
-
   }
+
+  private createForm() {
+    this.registerForm = new RegisterPageForm(this.formBuilder);
+  }
+
 }
