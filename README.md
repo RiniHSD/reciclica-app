@@ -1,4 +1,5 @@
 # reciclica-app
 
-<br> Script Hasil Praktikum </br>
-<br> Pemrograman Geospasial: Perangkat Bergerak Lanjut </br>
+<li> Script Hasil Praktikum </li>
+<li> Pemrograman Geospasial: Perangkat Bergerak Lanjut </li>
+
