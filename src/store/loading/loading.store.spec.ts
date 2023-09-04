@@ -1,33 +1,30 @@
-import { hide, show } from "./loading.actions"
-import { LoadingReducer } from "./loading.reducers"
+import { createApplication } from "@angular/platform-browser";
+import { hide, show } from "./loading.actions";
+import { loadingReducer } from "./loading.reducers"
 import { LoadingState } from "./LoadingState";
+import { createAction } from "@ngrx/store";
 
 describe('Loading store', () => {
 
     it('show', () => {
         const initialState: LoadingState = {show: false};
-        const newState = LoadingReducer(initialState, show());
+        const newState = loadingReducer(initialState, show());
 
         expect(newState).toEqual({show: true});
     })
 
     it('hide', () => {
         const initialState: LoadingState = {show: true};
-        const newState = LoadingReducer(initialState, hide());
+        const newState = loadingReducer(initialState, hide());
 
         expect(newState).toEqual({show: false});
     })
 
-    it('should keep state if action is unknows', () => {
+    it('should keep state if action is unknown', () => {
         const initialState: LoadingState = {show: true};
         const action = createAction("UNKNOWN")
-        const newState = LoadingReducer(initialState, action);
+        const newState = loadingReducer(initialState, action);
 
         expect(newState).toEqual({show: true});
     })
-
 })
-
-function createAction(arg0: string) {
-    throw new Error("Function not implemented.");
-}

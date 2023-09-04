@@ -7,19 +7,23 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PickupCallCardComponent  implements OnInit {
 
-  // hasHeader: boolean = true;
-  // hasFooter: boolean = true;
+@Input() hasHeader: boolean;
+@Input() hasFooter: boolean;
 
-  @Input() hasHeader?:boolean;
-  @Input() hasFooter?:boolean;
-  
-  @Input() status?:string;
-  @Input() updateAt?:string;
-  @Input() createAt?:string;
-  @Input() notes?:string;
-  @Input() value?:string;
-
-  constructor() { }
+@Input() status: string;
+@Input() updatedAt: string;
+@Input() createdAt: string;
+@Input() notes: string;
+@Input() value: string;
+  constructor() { 
+    this.hasHeader = false;
+    this.hasFooter = false;
+    this.status = '';
+    this.updatedAt= '';
+    this.createdAt='';
+    this.notes='';
+    this.value='';
+  }
 
   ngOnInit() {}
 

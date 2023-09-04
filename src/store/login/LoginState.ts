@@ -1,4 +1,4 @@
-export interface LoginState {
+export interface LoginState{
     error: any;
     isRecoveredPassword: boolean;
     isRecoveringPassword: boolean;

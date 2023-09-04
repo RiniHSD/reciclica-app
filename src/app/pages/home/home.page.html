@@ -1,30 +1,36 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar color="success">
-    <ion-button slot="start" fill="clear">
+    <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-button>
+    </ion-buttons>
     <ion-title>Reciclica</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list color="success">
-    <ion-item color="success">
-      <ion-avatar slot="start">
-        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png">
-      </ion-avatar>
-      <ion-label>
-        <h1>Rini Husadiyah</h1>
-        <p>Gathered: <span class="money">$ 15,00</span></p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+<ion-list color="success">
+  <ion-item color="success">
+    <ion-avatar slot="start">
+      <img src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png" />
+    </ion-avatar>
+    <ion-label>
+      <h1>Rini Husadiyah</h1>
+      <p>Gathered: <span class="money">$ 15,00</span></p>
+    </ion-label>
+  </ion-item>
+</ion-list>
 
-  <app-pickup-call-card [hasHeader]="true" [hasFooter]="true"></app-pickup-call-card>
+<app-pickup-call-card status="hold" updatedAt="25/08/2023" createdAt="23/08/2023" 
+notes="we have two bags that are full, one with plastic and the other with glasses">
+  <ion-card-header header>
+    <ion-card-subtitle>Last pickup call</ion-card-subtitle>
+  </ion-card-header>
+  <ion-button color="success" fill="clear" size="full" footer (click)="goToPickupCalls()">SEE ALL...</ion-button>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab> 
+</app-pickup-call-card>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="success" (click)="newPickupCall()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 </ion-content>

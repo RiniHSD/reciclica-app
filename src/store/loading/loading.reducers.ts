@@ -9,13 +9,14 @@ const initialState: LoadingState = {
 const reducer = createReducer(
     initialState,
     on(show, () => {
-        return {show: true};
+        return{show: true};
     }),
     on(hide, () => {
         return {show: false};
-    })
+    }),
+    
 );
 
-export function LoadingReducer(state: LoadingState, action: any){
+export function loadingReducer(state: LoadingState, action: any) {
     return reducer(state, action);
 }
