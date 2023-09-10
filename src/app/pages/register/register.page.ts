@@ -3,12 +3,14 @@ import { FormBuilder } from '@angular/forms';
 import { IonInput, ToastController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+import { LocationService } from 'src/app/services/location/location.service';
 import { AppState } from 'src/store/AppState';
 import { hide, show } from 'src/store/loading/loading.actions';
 import { login } from 'src/store/login/login.actions';
 import { register } from 'src/store/register/register.actions';
 import { RegisterState } from 'src/store/register/RegisterState';
 import { RegisterPageForm } from './form/register.page.form';
+import { Geolocation } from '@capacitor/geolocation';
 
 declare var google: any;
 
@@ -25,13 +27,15 @@ export class RegisterPage implements OnInit, OnDestroy {
 
   registerStateSubscription!: Subscription;
 
-  constructor(private formBuilder: FormBuilder, private store: Store<AppState>,
-    private toastController: ToastController) { }
+  constructor(private formBuilder: FormBuilder, private store: Store<AppState>, 
+    private toastController: ToastController) { } //private locationService: LocationService
 
   ngOnInit() {
     this.createForm();
 
     this.watchRegisterState();
+
+    this.fillUserAddressWithUserCurrentPosition();
   }
 
   ngOnDestroy() {
@@ -54,6 +58,14 @@ export class RegisterPage implements OnInit, OnDestroy {
       this.store.dispatch(register({userRegister: this.registerForm.getForm().value}));
     }
   }
+
+  private fillUserAddressWithUserCurrentPosition() {
+    navigator.geolocation.getCurrentPosition((enableHighAccuracy) => {
+      // this.locationService.geocode(enableHighAccuracy.coords).subscribe()
+      console.log(enableHighAccuracy)
+    })
+  }
+
 
   private createForm() {
     this.registerForm = new RegisterPageForm(this.formBuilder);
