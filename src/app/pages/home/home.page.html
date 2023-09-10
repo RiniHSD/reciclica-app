@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar color="success">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -8,29 +8,43 @@
 </ion-header>
 
 <ion-content>
-<ion-list color="success">
-  <ion-item color="success">
-    <ion-avatar slot="start">
-      <img src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png" />
-    </ion-avatar>
-    <ion-label>
-      <h1>Rini Husadiyah</h1>
-      <p>Gathered: <span class="money">$ 15,00</span></p>
-    </ion-label>
-  </ion-item>
-</ion-list>
-
-<app-pickup-call-card status="hold" updatedAt="25/08/2023" createdAt="23/08/2023" 
-notes="we have two bags that are full, one with plastic and the other with glasses">
-  <ion-card-header header>
-    <ion-card-subtitle>Last pickup call</ion-card-subtitle>
-  </ion-card-header>
-  <ion-button color="success" fill="clear" size="full" footer (click)="goToPickupCalls()">SEE ALL...</ion-button>
-
-</app-pickup-call-card>
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button color="success" (click)="newPickupCall()">
-    <ion-icon name="add"></ion-icon>
+  <ion-list>
+    <ion-item color="success">
+      <ion-avatar slot="start">
+        <img src="https://cdn-icons-png.flaticon.com/512/11498/11498793.png" 
+        alt="">
+      </ion-avatar>
+      <ion-label>
+        <h1>Rini Husadiyah</h1>
+        <p>Gathered: <span class="money">$15,00</span></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Last pickup call</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="hourglass-outline" color="warning" slot="start"></ion-icon>
+        <ion-label>On hold <p>24/08/2023</p> <p>09:09:09</p></ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Created at 22/08/2023 <p>Notes: we have two bags that are full, one with plastic and the other with glassess</p></ion-label>
+      </ion-item>
+      <ion-button color="danger" fill="clear" size="full">See all...</ion-button>
+    </ion-card-content>
+  </ion-card> -->
+  <app-pickup-call-card status="hold" updateAt="24/08/2023 10.10" createAt="23/08/2023"
+  notes="we have two bags that are full, one with plastic and the other with glassess">
+    <ion-card-header header>
+      <ion-card-subtitle>Last pickup call</ion-card-subtitle>
+    </ion-card-header>
+    <ion-button color="success" fill="clear" size="full" footer (click)="pickupCalls()">See all...</ion-button>
+  </app-pickup-call-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="success">
+    <ion-icon name="add" (click)="pickupCall()"></ion-icon>
   </ion-fab-button>
 </ion-fab>
 </ion-content>

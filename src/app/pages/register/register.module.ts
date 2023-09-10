@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { RegisterPageRoutingModule } from './register-routing.module';
-
 import { RegisterPage } from './register.page';
-import { ErrorMessageComponent } from 'src/app/components/error-message/error-message.component';
-import { LoginPageModule } from '../login/login.module';
+import { ErrorMessageModule } from 'src/app/components/error-message/error-message.modul';
 
 @NgModule({
   imports: [
@@ -17,10 +13,10 @@ import { LoginPageModule } from '../login/login.module';
     IonicModule,
     RegisterPageRoutingModule,
     ReactiveFormsModule,
+    ErrorMessageModule
   ],
   declarations: [
-    RegisterPage,
-    ErrorMessageComponent
+    RegisterPage
   ]
 })
 export class RegisterPageModule {}

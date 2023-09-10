@@ -9,10 +9,10 @@ import { AbstractControl, FormGroup } from '@angular/forms';
 export class ErrorMessageComponent  implements OnInit {
 
  @Input() message: string;
- @Input() field!: AbstractControl | null;
+ @Input() field!: AbstractControl;
  @Input() error: string;
   constructor() { 
-    this.message = '';
+    this.message = ''; 
     this.error = '';
 
   }

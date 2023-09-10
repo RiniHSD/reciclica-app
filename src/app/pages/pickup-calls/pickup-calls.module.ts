@@ -7,18 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { PickupCallsPageRoutingModule } from './pickup-calls-routing.module';
 
 import { PickupCallsPage } from './pickup-calls.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/components/pickup-call-card/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComponentsModule,
-    PickupCallsPageRoutingModule
+    PickupCallsPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [
-    PickupCallsPage
-  ]
+  declarations: [PickupCallsPage]
 })
 export class PickupCallsPageModule {}
