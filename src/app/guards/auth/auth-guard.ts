@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CanLoad, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable, of, switchMap, take } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { switchMap, take } from 'rxjs/operators';
 import { AppState } from 'src/store/AppState';
 
 @Injectable({
