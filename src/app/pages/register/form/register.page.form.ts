@@ -37,6 +37,18 @@ export class RegisterPageForm {
         return form;
     }
 
+    setAddress(place: any) {
+        const addressForm = this.form.get('address');
+
+        addressForm?.get('street')?.setValue(findStreet(place.address_components));
+        addressForm?.get('number')?.setValue(findAddressNumber(place.address_components));
+        addressForm?.get('neighborhood')?.setValue(findNeighborhood(place.address_components));
+        addressForm?.get('zipCode')?.setValue(findZipCode(place.address_components));
+        addressForm?.get('state')?.setValue(findState(place.address_components));
+        addressForm?.get('city')?.setValue(findCity(place.address_components));
+
+    }
+
     getForm() : FormGroup {
         return this.form;
     }
@@ -54,3 +66,27 @@ function matchPasswordAndRepeatPassword(form: FormGroup) : ValidatorFn {
     return validator;
 
 }
+
+function findStreet(address_components: any): any {
+    throw new Error("Function not implemented.");
+}
+function findAddressNumber(address_components: any): any {
+    throw new Error("Function not implemented.");
+}
+
+function findNeighborhood(address_components: any): any {
+    throw new Error("Function not implemented.");
+}
+
+function findZipCode(address_components: any): any {
+    throw new Error("Function not implemented.");
+}
+
+function findState(address_components: any): any {
+    throw new Error("Function not implemented.");
+}
+
+function findCity(address_components: any): any {
+    throw new Error("Function not implemented.");
+}
+

@@ -50,7 +50,7 @@
       <ion-card-content formGroupName="address">
         <ion-item>
           <ion-label position="floating"> Address</ion-label>
-          <ion-input type="text" formControlName="street"></ion-input>
+          <ion-input type="text" formControlName="street" #autocomplete></ion-input>
         </ion-item>
         <app-error-message [field]="registerForm.getForm().get('address')?.get('street')" error="required" message="Address street is mandatory"></app-error-message>
         <ion-item>
