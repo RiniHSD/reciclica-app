@@ -31,6 +31,6 @@ const reducer = createReducer(initialState,
     })
 );
 
-export function registerReducer(state: RegisterState, action) {
+export function registerReducer(state: RegisterState, action: any) {
     return reducer(state, action);
 }

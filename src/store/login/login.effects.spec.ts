@@ -1,5 +1,5 @@
-import { effect } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
+import { EffectsModule } from "@ngrx/effects";
 import { Action, StoreModule } from "@ngrx/store";
 import { Observable, of, throwError } from "rxjs";
 import { login, loginFail, loginSuccess, recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from "src/store/login/login.actions";
@@ -7,8 +7,6 @@ import { LoginEffects } from "./login.effects"
 import { provideMockActions } from '@ngrx/effects/testing';
 import { AuthService } from "src/app/services/auth/auth.service";
 import { User } from "src/app/model/user/User";
-import { userInfo } from "os";
-import { EffectsModule } from "@ngrx/effects";
 
 describe('Login effects', () => {
     let effects: LoginEffects;
