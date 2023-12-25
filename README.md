@@ -1,4 +1,5 @@
 # reciclica-app
 
-<p> Alhamdulillah pembuatan hybrid apps menggunakan Ionic Framework telah selesai, namun terdapat fungsi yang tidak bisa digunakan, 
-  yaitu pada fitur getting address detail with google autocomplete dikarenakan Google Maps API yang digunakan harus berbayar, sedangkan API yang digunakan oleh praktikan adalah API gratisan. Sekian terima kasih </p>
+<p> Hybrid Apps menggunakan Ionic Framework </p>
+
+![Tampilan Produk](https://github.com/RiniHSD/reciclica-app/assets/122778231/74386d05-89e4-4c53-a3d8-6f33e5a8c7e6)
